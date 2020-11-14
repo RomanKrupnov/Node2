@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>{{ message }}</h1>
+<form action="/news" method="post">
+    <input type="number" name="qty" placeholder="Введите количество новостей для вывода" value="{{ member }}">
+    <input type="submit" value='Вывести новости'>
+</form>
+<div class="news-wrapper">
+    <ul>
+        {% if news %}
+            {% for item in news %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+
+</body>
+</html>
